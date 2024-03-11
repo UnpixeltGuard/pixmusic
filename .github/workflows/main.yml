@@ -49,6 +49,7 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+                ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ steps.keydb.outputs.release }}
           build-args: |
             JMUSICBOT_VERSION=${{ steps.keydb.outputs.release }}
             BUILDDATE=${{ steps.date.outputs.date }}
