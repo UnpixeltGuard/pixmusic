@@ -48,8 +48,8 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-           pixelt/pixmusic:latest
-           pixelt/pixmusic:${{ steps.keydb.outputs.release }}
+           pixelt/jmusicbot:latest
+           pixelt/jmusicbot:${{ steps.keydb.outputs.release }}
           build-args: |
             JMUSICBOT_VERSION=${{ steps.keydb.outputs.release }}
             BUILDDATE=$GITHUB_OUTPUT
