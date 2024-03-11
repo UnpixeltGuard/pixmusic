@@ -1,10 +1,11 @@
-[![Image Size](https://img.shields.io/docker/image-size/pixelt/pixmusic?sort=semver&style=for-the-badge)](https://hub.docker.com/layers/pixelt/pixmusic/latest/images/sha256:c37c0315014c85f7c069464fa5e0426d8585341c57b21c1a022fe6486387e776?context=explore)
-[![Docker Pulls](https://img.shields.io/docker/pulls/pixelt/pixmusic?style=for-the-badge)](https://hub.docker.com/r/pixelt/pixmusic)
+[![Image Size](https://img.shields.io/docker/image-size/pixelt/jmusicbot?sort=semver&style=for-the-badge)](https://hub.docker.com/layers/pixelt/jmusicbot/latest/images/sha256:c37c0315014c85f7c069464fa5e0426d8585341c57b21c1a022fe6486387e776?context=explore)
+[![Docker Pulls](https://img.shields.io/docker/pulls/pixelt/jmusicbot?style=for-the-badge)](https://hub.docker.com/r/pixelt/jmusicbot)
 [![License](https://img.shields.io/github/license/UnpixeltGuard/pixmusic?style=for-the-badge)](https://github.com/UnpixeltGuard/pixmusic/blob/master/LICENSE)
-[![Version](https://img.shields.io/docker/v/pixelt/pixmusic/latest?style=for-the-badge)](https://hub.docker.com/r/pixelt/pixmusic/tags)
+[![Version](https://img.shields.io/docker/v/pixelt/jmusicbot/latest?style=for-the-badge)](https://hub.docker.com/r/pixelt/jmusicbot/tags)
 [![Build](https://img.shields.io/github/workflow/status/UnpixeltGuard/pixmusic/Build%20latest%20docker%20image%20for%20JMusicBot?style=for-the-badge)](https://github.com/UnpixeltGuard/pixmusic/actions/workflows/main.yml)
+![GitHub last commit](https://img.shields.io/github/last-commit/UnpixeltGuard/pixmusic?style=for-the-badge)
 
-Docker image for JMusicBot for my personal discord server. 
+Docker image for JMusicBot for my personal discord server and more flexible version control. 
 
 [JMusicBot GitHub](https://github.com/jagrosh/MusicBot)
 
@@ -29,6 +30,7 @@ pixelt/pixmusic:latest
 If you don't already have a `config.txt` either download the template or mount the volume with `:rw`,
 this will download the current template from github.
 
+Without own config.txt
 ```
 $ docker run --name jmusicbot -d -v /path/to/config.txt:/app/config.txt:rw \
 -v /path/to/serversettings.json:/app/serversettings.json:rw \
