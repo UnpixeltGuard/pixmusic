@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Starting JMusicBot made by ${bold}jagrosh${bold} (https://github.com/jagrosh/MusicBot)
-JMusicBot version: $VERSION, Dockerized on: $DATE"
+JMusicBot version: $VERSION, Dockerized on: $GITHUB_OUTPUT"
 echo ""
 
 FILE=/app/config.txt
