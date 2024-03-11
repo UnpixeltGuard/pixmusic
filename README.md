@@ -29,7 +29,6 @@ pixelt/pixmusic:latest
 If you don't already have a `config.txt` either download the template or mount the volume with `:rw`,
 this will download the current template from github.
 
-Without own config.txt
 ```
 $ docker run --name jmusicbot -d -v /path/to/config.txt:/app/config.txt:rw \
 -v /path/to/serversettings.json:/app/serversettings.json:rw \
