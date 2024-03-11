@@ -22,8 +22,7 @@ jobs:
       -
         name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S%:z')"
-
+        run: echo "{date}={$(date +'%Y-%m-%dT%H:%M:%S%:z')}" >> $GITHUB_OUTPUT
       
       - 
         name: Set up QEMU
@@ -48,8 +47,9 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-                ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ steps.keydb.outputs.release }}
+          tags: |
+           pixelt/pixmusic:latest
+           pixelt/pixmusic:${{ steps.keydb.outputs.release }}
           build-args: |
             JMUSICBOT_VERSION=${{ steps.keydb.outputs.release }}
-            BUILDDATE=${{ steps.date.outputs.date }}
+            BUILDDATE=$GITHUB_OUTPUT
