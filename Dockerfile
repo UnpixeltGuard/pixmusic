@@ -11,8 +11,7 @@ ADD https://github.com/jagrosh/MusicBot/releases/download/$JMUSICBOT_VERSION/JMu
 
 COPY docker-entrypoint.sh ./
 
-RUN chmod +x ./docker-entrypoint.sh && \
-    mkdir config
+RUN chmod +x ./docker-entrypoint.sh
 
 VOLUME [ "/app" ]
 
