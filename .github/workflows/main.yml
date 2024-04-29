@@ -44,10 +44,10 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: |
-           JMUSICBOT_VERSION=${{latest_version}}
+           JMUSICBOT_VERSION=${{ steps.get_releases.outputs.latest_version }}
           tags: |
            pixelt/jmusicbot:latest
-           pixelt/jmusicbot:${{ latest_version }}
+           pixelt/jmusicbot:${{ steps.get_releases.outputs.latest_version }}
       
       - 
         name: Build and Push Previous Image
@@ -57,6 +57,6 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: |
-            JMUSICBOT_VERSION=${{ previous_version }}
+            JMUSICBOT_VERSION=${{ steps.get_releases.outputs.previous_version }}
           tags: |
-            pixelt/jmusicbot:${{ previous_version }}
+            pixelt/jmusicbot:${{ steps.get_releases.outputs.previous_version }}
