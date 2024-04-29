@@ -21,8 +21,8 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
              const releases = await github.rest.repos.listReleases({
-              owner: context.repo.jagrosh,
-              repo: context.repo.MusicBot,
+              owner: jagrosh,
+              repo: MusicBot,
               per_page: 2
              });
       
