@@ -14,15 +14,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - 
-        name: Get latest releases
+        name: Get latest 2 releases
         id: latest_releases
-        uses: pozetroninc/github-action-get-latest-release@master
+        uses: actions/github-script@v7.0.1
         with:
-          owner: jagrosh
-          repo: MusicBot
-          exclude: prerelease, draft
-          limit: 2
-          
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+             const releases = await github.rest.repos.listReleases({
+              owner: context.repo.jagrosh,
+              repo: context.repo.MusicBot,
+              per_page: 2
+             });
+      
+             const latestReleases = releases.data.map(release => ({
+              tag_name: release.tag_name,
+              version: release.tag_name.replace(/^v/, '')
+             }));
+      
+             return latestReleases;
+      
       - 
         name: Checkout repository
         uses: actions/checkout@v4
@@ -46,10 +56,10 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: |
-           JMUSICBOT_VERSION=${{ steps.latest_releases.outputs.release1 }}
+           JMUSICBOT_VERSION=${{ steps.latest_releases.outputs.release[0].version }}
           tags: |
            pixelt/jmusicbot:latest
-           pixelt/jmusicbot:${{ steps.latest_releases.outputs.release1 }}
+           pixelt/jmusicbot:${{ steps.latest_releases.outputs.release[0].version }}
       
       - 
         name: Build and Push Previous Image
@@ -59,6 +69,6 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: |
-            JMUSICBOT_VERSION=${{ steps.latest_releases.outputs.release2 }}
+            JMUSICBOT_VERSION=${{ steps.latest_releases.outputs.release[1].version }}
           tags: |
-            ${{ github.repository }}:${{ steps.latest_releases.outputs.release2 }}
+            ${{ github.repository }}:${{ steps.latest_releases.outputs.release[1].version }}
