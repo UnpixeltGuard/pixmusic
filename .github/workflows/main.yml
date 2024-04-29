@@ -47,7 +47,7 @@ jobs:
            JMUSICBOT_VERSION=${{latest_version}}
           tags: |
            pixelt/jmusicbot:latest
-           pixelt/jmusicbot:${{latest_version}
+           pixelt/jmusicbot:${{latest_version}}
       
       - 
         name: Build and Push Previous Image
