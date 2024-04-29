@@ -15,7 +15,7 @@ jobs:
     steps:
       - 
         name: Get latest 2 releases
-        id: latest_releases
+        id: get_releases
         run: |
           latest_version=$(curl -s https://api.github.com/repos/jagrosh/musicbot/releases/latest | grep -o '"tag_name": *"[^"]*"' | head -n 1 | sed 's/"tag_name": *"//;s/"//')
           previous_version=$(curl -s https://api.github.com/repos/jagrosh/musicbot/releases | grep -o '"tag_name": *"[^"]*"' | sed -n '2p' | sed 's/"tag_name": *"//;s/"//')
@@ -47,7 +47,7 @@ jobs:
            JMUSICBOT_VERSION=${{latest_version}}
           tags: |
            pixelt/jmusicbot:latest
-           pixelt/jmusicbot:${{latest_version}}
+           pixelt/jmusicbot:${{ latest_version }}
       
       - 
         name: Build and Push Previous Image
@@ -57,6 +57,6 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: |
-            JMUSICBOT_VERSION=${{ GITHUB_OUTPUT.previous_version }}
+            JMUSICBOT_VERSION=${{ previous_version }}
           tags: |
-            pixelt/jmusicbot:${{ GITHUB_OUTPUT.previous_version }}
+            pixelt/jmusicbot:${{ previous_version }}
