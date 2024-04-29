@@ -38,19 +38,8 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      -
-        name: Build and Push Latest Image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          platforms: linux/amd64
-          build-args: |
-            JMUSICBOT_VERSION=${{ steps.latest_releases.outputs.release1 }}
-          tags: |
-            pixelt/jmusicbot:latest
-
       - 
-        name: Build and Push New Image
+        name: Build and Push Latest Image
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -59,6 +48,7 @@ jobs:
           build-args: |
            JMUSICBOT_VERSION=${{ steps.latest_releases.outputs.release1 }}
           tags: |
+           pixelt/jmusicbot:latest
            pixelt/jmusicbot:${{ steps.latest_releases.outputs.release1 }}
       
       - 
