@@ -21,7 +21,7 @@ jobs:
         name: Get latest releases
         id: get_releases
         run: |
-          echo "{TAGS}={$(curl -sSL "https://api.github.com/repos/jagrosh/musicbot/releases" | jq -r '.[].tag_name' | head -n 2)}" >> $GITHUB_STATE
+          echo "{TAGS}=$(curl -sSL "https://api.github.com/repos/jagrosh/musicbot/releases" | jq -r '.[].tag_name' | head -n 2)" >> $GITHUB_STATE
           echo "{tags}={TAGS}" >> $GITHUB_OUTPUT
 
       - 
