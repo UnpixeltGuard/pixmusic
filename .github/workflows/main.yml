@@ -28,7 +28,6 @@ jobs:
       
              const latestReleases = releases.data.map(release => ({
               tag_name: release.tag_name,
-              version: release.tag_name.replace(/^v/, '')
              }));
       
              return latestReleases;
@@ -69,6 +68,6 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: |
-            JMUSICBOT_VERSION=${{ steps.latest_releases.outputs.releases[1].version }}
+            JMUSICBOT_VERSION=${{ steps.latest_releases.outputs.releases[1].tag_name }}
           tags: |
-            ${{ github.repository }}:${{ steps.latest_releases.outputs.releases[1].version }}
+            ${{ github.repository }}:${{ steps.latest_releases.outputs.releases[1].tag_name }}
