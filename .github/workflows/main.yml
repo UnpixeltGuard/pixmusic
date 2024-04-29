@@ -28,6 +28,7 @@ jobs:
       
              const latestReleases = releases.data.map(release => ({
               tag_name: release.tag_name,
+              version: release.tag_name
              }));
       
              return latestReleases;
