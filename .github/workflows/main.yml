@@ -22,8 +22,7 @@ jobs:
         id: get_releases
         run: |
           TAGS=$(curl -sSL "https://api.github.com/repos/jagrosh/musicbot/releases" | jq -r '.[].tag_name' | head -n 2)
-          echo "::set-output name=tags::${TAGS}"
-
+          echo "{tags}={TAGS}" >> $GITHUB_OUTPUT
 
       - 
         name: Log in to Docker Hub
