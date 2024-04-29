@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+     latest_release: ${{ steps.get_releases.latest_version }}
+     previous_release: ${{ steps.get_releases.previous_version }}
     steps:
       - 
         name: Get latest 2 releases
@@ -44,10 +47,10 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: |
-           JMUSICBOT_VERSION=${{ steps.get_releases.outputs.latest_version }}
+           JMUSICBOT_VERSION=${{ outputs.latest_release }}
           tags: |
            pixelt/jmusicbot:latest
-           pixelt/jmusicbot:${{ steps.get_releases.outputs.latest_version }}
+           pixelt/jmusicbot:${{ outputs.latest_release }}
       
       - 
         name: Build and Push Previous Image
@@ -57,6 +60,6 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: |
-            JMUSICBOT_VERSION=${{ steps.get_releases.outputs.previous_version }}
+            JMUSICBOT_VERSION=${{ outputs.previous_release }}
           tags: |
-            pixelt/jmusicbot:${{ steps.get_releases.outputs.previous_version }}
+            pixelt/jmusicbot:${{ outputs.previous_release }}
