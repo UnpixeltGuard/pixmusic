@@ -1,9 +1,9 @@
 name: Build latest docker image for JMusicBot
 
 on:
-  #push:
-    #branches:
-      #- main
+  push:
+    branches:
+      - main
   schedule:
     - cron: "30 2 4 * *"
 
