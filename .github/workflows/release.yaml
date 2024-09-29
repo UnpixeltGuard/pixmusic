@@ -1,0 +1,44 @@
+name: Build MusicBot with Custom Dependency
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout My Repo
+        uses: actions/checkout@v2
+      
+      - name: Clone MusicBot Repository
+        run: |
+          git clone https://github.com/elijahtaylorr/MusicBot.git
+      
+      - name: Overwrite pom.xml
+        run: |
+          cp ./pom.xml MusicBot/pom.xml
+          cd MusicBot
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
+      - name: Build Project
+        run: |
+          cd MusicBot
+          mvn clean install
+
+      - name: Upload JAR 
+        uses: actions/upload-artifact@v2
+        with:
+          name: musicbot-jar
+          path: MusicBot/target/*.jar
+
