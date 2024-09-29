@@ -8,7 +8,7 @@ LABEL org.opencontainers.image.created="$BUILDDATE"
 
 WORKDIR /app
 #ADD https://github.com/jagrosh/MusicBot/releases/download/$JMUSICBOT_VERSION/JMusicBot-$JMUSICBOT_VERSION.jar ./JMusicBot.jar
-ADD https://github.com/JMusicBot-0.4.3-yt-oauth2.jar ./JMusicBot.jar
+ADD https://github.com/UnpixeltGuard/pixmusic/blob/412f717e8071ee6f79c0491a47a707134ed16d2f/JMusicBot-0.4.3-yt-oauth2.jar ./JMusicBot.jar
 
 COPY docker-entrypoint.sh ./
 
