@@ -1,12 +1,10 @@
 name: Build MusicBot with Custom Dependency
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+#on:
+#  push:
+#    branches:
+#      - main
+
 
 jobs:
   build:
