@@ -16,7 +16,12 @@ jobs:
       
       - name: Clone MusicBot Repository
         run: |
-          git clone https://github.com/elijahtaylorr/MusicBot.git
+          git clone https://github.com/jagrosh/MusicBot.git
+          cd MusicBot
+          git fetch origin
+          git checkout yt-oauth2
+          git pull origin yt-oauth2
+          cd ../
       
       - name: Overwrite pom.xml
         run: |
