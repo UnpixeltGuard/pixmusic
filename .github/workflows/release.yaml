@@ -1,4 +1,4 @@
-name: Build MusicBot with Custom Dependency
+name: Build MusicBot with Custom Dependency test
 
 on:
   push:
