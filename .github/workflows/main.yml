@@ -44,6 +44,8 @@ jobs:
           push: true
           tags: |
            pixelt/jmusicbot:latest
-           pixelt/jmusicbot:${{ steps.keydb.outputs.release }}
+           pixelt/jmusicbot:0.4.3
+#           pixelt/jmusicbot:${{ steps.keydb.outputs.release }}
           build-args: |
-           JMUSICBOT_VERSION=${{ steps.keydb.outputs.release }}
+            JMUSICBOT_VERSION=0.4.3
+#           JMUSICBOT_VERSION=${{ steps.keydb.outputs.release }}
