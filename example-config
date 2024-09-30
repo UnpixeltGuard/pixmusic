@@ -14,7 +14,7 @@
 // https://github.com/jagrosh/MusicBot/wiki/Getting-a-Bot-Token
 
 token = BOT_TOKEN_HERE
-
+youtubeoauth2=true
 
 // This sets the owner of the bot
 // This needs to be the owner's ID (a 17-18 digit number)
