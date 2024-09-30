@@ -1,4 +1,4 @@
-name: Build latest docker image for JMusicBot
+name: Build docker image for JMusicBot
 
 on:
   push:
