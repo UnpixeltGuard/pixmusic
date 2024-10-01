@@ -5,7 +5,8 @@
 [![Build](https://img.shields.io/github/workflow/status/UnpixeltGuard/pixmusic/Build%20latest%20docker%20image%20for%20JMusicBot?style=for-the-badge)](https://github.com/UnpixeltGuard/pixmusic/actions/workflows/main.yml)
 ![GitHub last commit](https://img.shields.io/github/last-commit/UnpixeltGuard/pixmusic?style=for-the-badge)
 
-(Currently fixed until YouTube breaks it again, if you don't install freshly you have to add youtubeoauth2=true into your config.txt)
+(Currently fixed until YouTube breaks it again, if you don't install freshly you have to add youtubeoauth2=true into your config.txt and follow the instructions in the logs)
+
 Docker image for JMusicBot for my personal discord server and more flexible version control. 
 
 [JMusicBot GitHub](https://github.com/jagrosh/MusicBot)
