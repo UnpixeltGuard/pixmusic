@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jagrosh</groupId>
     <artifactId>JMusicBot</artifactId>
-    <version>0.4.3-yt.oauth2</version>
+    <version>0.4.3-yt-oauth2</version>
     <packaging>jar</packaging>
 
     <repositories>
@@ -90,7 +90,17 @@
 	<dependency>
     		<groupId>com.fasterxml.jackson.core</groupId>
     		<artifactId>jackson-databind</artifactId>
-   		<version>2.18.0</version> 
+   		<version>2.17.1</version> 
+	</dependency>
+	<dependency>
+    		<groupId>com.fasterxml.jackson.core</groupId>
+    		<artifactId>jackson-annotations</artifactId>
+   		<version>2.17.1</version> 
+	</dependency>
+	<dependency>
+    		<groupId>com.fasterxml.jackson.core</groupId>
+    		<artifactId>jackson-core</artifactId>
+   		<version>2.17.1</version> 
 	</dependency>
         <!-- Testing Dependencies -->
         <dependency>
