@@ -1,4 +1,4 @@
-name: Build MusicBot with Custom Dependency test
+name: Build MusicBot with Custom Dependency - new databind
 
 on:
   push:
