@@ -13,12 +13,6 @@ Docker image for JMusicBot for my personal discord server and more flexible vers
 
 [JMusicBot Homepage](https://jmusicbot.com/)
 
-I used following projects as template:
-
-[Bas-Korver](https://github.com/Bas-Korver/docker-jmusicbot)
-
-[alexandreteles](https://github.com/alexandreteles/jmusicbot-docker)
-
 
 Mount your `config.txt` on the path `/app/config.txt`
 
