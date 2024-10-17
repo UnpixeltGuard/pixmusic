@@ -1,4 +1,4 @@
-name: Build MusicBot with Custom Dependency - new databind
+name: Build MusicBot with Custom Dependencies - fixed commons-io
 
 on:
   push:
