@@ -43,9 +43,11 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-           pixelt/jmusicbot:latest
-           pixelt/jmusicbot:0.4.3-yt-oauth2
+#           pixelt/jmusicbot:latest
+#           pixelt/jmusicbot:0.4.3-yt-oauth2
+           pixelt/jmusicbot:0.4.3-yt-oauth2-test
 #           pixelt/jmusicbot:${{ steps.keydb.outputs.release }}
           build-args: |
-            JMUSICBOT_VERSION=0.4.3-yt-oauth2
+#            JMUSICBOT_VERSION=0.4.3-yt-oauth2
+            JMUSICBOT_VERSION=0.4.3-yt-oauth2-test
 #           JMUSICBOT_VERSION=${{ steps.keydb.outputs.release }}
